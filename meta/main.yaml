@@ -1,0 +1,25 @@
+galaxy_info:
+  author: Tim Schwenke
+  namespace: trallnag
+  role_name: asdf_plugin
+  description: Installs any asdf plugin and package
+  license: MIT
+  company: none
+  min_ansible_version: 2.5
+
+  platforms:
+    - name: GenericBSD
+      versions:
+        - any
+    - name: GenericLinux
+      versions:
+        - any
+    - name: GenericUNIX
+      versions:
+        - any
+
+  galaxy_tags:
+    - asdf
+    - system
+    - packaging
+    - development

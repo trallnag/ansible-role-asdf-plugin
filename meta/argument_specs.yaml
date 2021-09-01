@@ -1,0 +1,41 @@
+argument_specs:
+  main:
+    short_description: Main entry point
+    options:
+      asdf_plugin_name:
+        type: str
+        required: true
+        description: >-
+          Name of the asdf plugin to install. For example `terraform`.
+
+      asdf_plugin_git_url:
+        default: ""
+        type: str
+        required: false
+        description: >-
+          Git repo containing the plugin. If not set, the central plugin repo
+          will be used as a reference to find the appropiate plugin repository.
+          For example `https://github.com/asdf-community/asdf-hashicorp.git`.
+
+      asdf_plugin_git_ref:
+        type: str
+        required: false
+        description: >-
+          Git reference of the plugin repository. If not set, asdf will simply
+          use the latest commit on the default branch. If set, the given git
+          ref will be enforced. This includes rollbacks if the plugin is on a
+          newer version. For example due to a manual `asdf plugin update --all`.
+
+      asdf_plugin_package_versions:
+        type: list
+        elements: str
+        required: false
+        description: >-
+          List of package versions to install. Each item is passed to `asdf install`,
+          so you can also use strings like `latest`. Check `asdf --help`.
+
+      asdf_plugin_package_version_global:
+        type: str
+        required: false
+        description: >-
+          Set the package global version.

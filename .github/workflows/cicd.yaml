@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  cicd:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      # ========================================================================
+      # Pre-Commit
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Setup pre-commit
+        run: |
+          pip install pre-commit
+          pre-commit install
+
+      - name: Cache pre-commit
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pre-commit
+          key: ${{ runner.os }}-pre-commit
+
+      - run: pre-commit run --all-files --verbose --show-diff-on-failure
+
+      # ========================================================================
+      # Semantic Release
+
+      - name: Copy package meta info to root
+        run: |
+          cp .local/ci/package* .
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: npm
+
+      - name: Install packages
+        # TODO: Remove `2>&1 | tee` once issue closed.
+        # https://github.com/npm/cli/issues/2560
+        # https://github.com/npm/cli/issues/3314
+        run: npm install --no-progress --prefer-offline 2>&1 | tee
+
+      - name: Semantic Release
+        if: "!contains(github.event.head_commit.message, '[skip semantic release]')"
+        id: semantic_release
+        run: npx --no-install semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push role to Ansible Galaxy
+        if: steps.semantic_release.outputs.new_release_published == 'true'
+        uses: robertdebock/galaxy-action@1.1.1
+        with:
+          galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}

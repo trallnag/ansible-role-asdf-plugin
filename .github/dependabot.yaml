@@ -7,3 +7,8 @@ updates:
     directory: /
     schedule:
       interval: monthly
+
+  - package-ecosystem: npm
+    directory: /.local/ci/
+    schedule:
+      interval: monthly

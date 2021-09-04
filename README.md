@@ -1,7 +1,7 @@
 ![status](https://img.shields.io/badge/status-active-brightgreen)
-[![role](https://img.shields.io/ansible/role/56143)](https://galaxy.ansible.com/trallnag/asdf-plugin)
-[![quality](https://img.shields.io/ansible/quality/56143)](https://galaxy.ansible.com/trallnag/asdf-plugin)
-[![downloads](https://img.shields.io/ansible/role/d/56143?label=downloads)](https://galaxy.ansible.com/trallnag/asdf-plugin)
+[![role](https://img.shields.io/ansible/role/56162)](https://galaxy.ansible.com/trallnag/asdf_plugin)
+[![quality](https://img.shields.io/ansible/quality/56162)](https://galaxy.ansible.com/trallnag/asdf_plugin)
+[![downloads](https://img.shields.io/ansible/role/d/56162?label=downloads)](https://galaxy.ansible.com/trallnag/asdf_plugin)
 
 # Ansible Role `trallnag.asdf_plugin`
 

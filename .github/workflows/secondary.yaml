@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: secondary
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches-ignore: [master]
+
+jobs:
+  secondary:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ========================================================================
+
+      - uses: actions/checkout@v2
+
+      # ========================================================================
+      # Pre-Commit
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Setup pre-commit
+        run: |
+          pip install pre-commit
+          pre-commit install
+
+      - name: Cache pre-commit
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pre-commit
+          key: ${{ runner.os }}-pre-commit
+
+      - run: pre-commit run --all-files --verbose --show-diff-on-failure
+
+      # ========================================================================

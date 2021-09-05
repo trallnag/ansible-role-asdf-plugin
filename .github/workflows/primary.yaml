@@ -1,16 +1,19 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-name: cicd
+name: primary
 
 on:
   workflow_dispatch:
   push:
+    branches: [master]
 
 jobs:
-  cicd:
+  primary:
     runs-on: ubuntu-latest
 
     steps:
+
+      # ========================================================================
 
       - uses: actions/checkout@v2
 
@@ -60,7 +63,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # ========================================================================
+
       - name: Import to Ansible Galaxy
         uses: robertdebock/galaxy-action@1.1.1
         with:
           galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
+
+      # ========================================================================

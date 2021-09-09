@@ -28,7 +28,7 @@ Configuration of Semantic Release takes place in multiple places:
   this project uses the Conventional Commits preset, a bunch of additonal types
   and a few additional release rules.
 
-* [`.local/ci/`](.local/ci): Dependency management for the Semantic Release
+* [`.local/node/`](.local/ci): Dependency management for the Semantic Release
   environment. At runtime in CI/CD pipeline the `package.json` and lock file are
   copied to the root of the project.
 

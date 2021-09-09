@@ -42,7 +42,7 @@ jobs:
 
       - name: Copy package meta info to root
         run: |
-          cp .local/ci/package* .
+          cp .local/node/package* .
 
       - name: Setup Node.js
         uses: actions/setup-node@v2

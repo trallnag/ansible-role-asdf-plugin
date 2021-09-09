@@ -2,7 +2,7 @@
 # Project specific part of '.gitignore'.
 
 
-.local/ci/node_modules
+.local/node/node_modules
 
 
 # ==============================================================================

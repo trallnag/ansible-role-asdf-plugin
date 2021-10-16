@@ -1,5 +1,4 @@
-![status](https://img.shields.io/badge/status-active-brightgreen)
-[![role](https://img.shields.io/ansible/role/56162)](https://galaxy.ansible.com/trallnag/asdf_plugin)
+[![galaxy](https://img.shields.io/ansible/role/56162)](https://galaxy.ansible.com/trallnag/asdf_plugin)
 [![quality](https://img.shields.io/ansible/quality/56162)](https://galaxy.ansible.com/trallnag/asdf_plugin)
 [![downloads](https://img.shields.io/ansible/role/d/56162?label=downloads)](https://galaxy.ansible.com/trallnag/asdf_plugin)
 
@@ -20,7 +19,7 @@ Available on [Ansible Galaxy](https://galaxy.ansible.com/trallnag/asdf_plugin).
 
 ## Special Requirements
 
-The package manager asdf must be available on the target.
+Asdf must be available on the target.
 
 ## Special Dependencies
 
@@ -28,45 +27,7 @@ None.
 
 ## Role Variables
 
-```yaml
-asdf_plugin_name:
-  type: str
-  required: true
-  description: >-
-    Name of the asdf plugin to install. For example `terraform`.
-
-asdf_plugin_git_url:
-  default: ""
-  type: str
-  required: false
-  description: >-
-    Git repo containing the plugin. If not set, the central plugin repo
-    will be used as a reference to find the appropiate plugin repository.
-    For example `https://github.com/asdf-community/asdf-hashicorp.git`.
-
-asdf_plugin_git_ref:
-  type: str
-  required: false
-  description: >-
-    Git reference of the plugin repository. If not set, asdf will simply
-    use the latest commit on the default branch. If set, the given git
-    ref will be enforced. This includes rollbacks if the plugin is on a
-    newer version. For example due to a manual `asdf plugin update --all`.
-
-asdf_plugin_package_versions:
-  type: list
-  elements: str
-  required: false
-  description: >-
-    List of package versions to install. Each item is passed to `asdf install`,
-    so you can also use strings like `latest`. Check `asdf --help`.
-
-asdf_plugin_package_version_global:
-  type: str
-  required: false
-  description: >-
-    Set the package global version.
-```
+Check out [`meta/argument_specs.yaml`](meta/argument_specs.yaml).
 
 ## Examples
 
@@ -92,20 +53,20 @@ And here packaged within a small wrapper role:
 
 ```yaml
 - name: Install Terraform with asdf
-  import_role:
+  ansible.builtin.import_role:
     name: trallnag.asdf_plugin
   vars:
     asdf_plugin_name: terraform
     asdf_plugin_git_url: https://github.com/asdf-community/asdf-hashicorp.git
-    asdf_plugin_package_versions: ["1.0.5"]
-    asdf_plugin_package_version_global: "1.0.5"
+    asdf_plugin_package_versions: ["1.0.9"]
+    asdf_plugin_package_version_global: "1.0.9"
 
-- name: Setup completion
-  shell: |
-    complete -C ~/.asdf/installs/terraform/1.0.3/bin/terraform terraform
-  args:
-    executable: /bin/bash
-  changed_when: false
+- name: Setup completion for Bash
+  ansible.builtin.blockinfile:
+    path: ~/.bashrc
+    marker: "# {mark} :: ANSIBLE MANAGED BLOCK :: {{ role_name }}"
+    block: |
+      complete -C terraform terraform
 ```
 
 ## License

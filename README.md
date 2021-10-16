@@ -1,3 +1,4 @@
+[![primary](https://github.com/trallnag/ansible-role-asdf-plugin/actions/workflows/primary.yaml/badge.svg)](https://github.com/trallnag/ansible-role-asdf-plugin/actions/workflows/primary.yaml)
 [![galaxy](https://img.shields.io/ansible/role/56162)](https://galaxy.ansible.com/trallnag/asdf_plugin)
 [![quality](https://img.shields.io/ansible/quality/56162)](https://galaxy.ansible.com/trallnag/asdf_plugin)
 [![downloads](https://img.shields.io/ansible/role/d/56162?label=downloads)](https://galaxy.ansible.com/trallnag/asdf_plugin)

@@ -39,3 +39,11 @@ argument_specs:
         required: false
         description: >-
           Set the package global version.
+
+      asdf_plugin_shell_executable:
+        type: str
+        required: false
+        description: >-
+          Absolute path to a shell executable that the Ansible Shell module
+          tasks should use for working with asdf. If this option is unset, this
+          the module defaults will be used.

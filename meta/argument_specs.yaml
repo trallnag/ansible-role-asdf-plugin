@@ -9,7 +9,6 @@ argument_specs:
           Name of the asdf plugin to install. For example `terraform`.
 
       asdf_plugin_git_url:
-        default: ""
         type: str
         required: false
         description: >-
@@ -42,8 +41,16 @@ argument_specs:
 
       asdf_plugin_shell_executable:
         type: str
-        required: false
+        required: true
+        default: /bin/bash
         description: >-
           Absolute path to a shell executable that the Ansible Shell module
           tasks should use for working with asdf. If this option is unset, this
           the module defaults will be used.
+
+      asdf_plugin_source:
+        type: str
+        required: true
+        default: ~/.asdf/asdf.sh
+        description: >-
+          Asdf source script.

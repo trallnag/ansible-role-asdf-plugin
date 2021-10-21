@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.2](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.1...1.1.2) (2021-10-21)
+
+
+### 🐛 Bug Fixes
+
+* Source asdf init script ([ce50080](https://github.com/trallnag/ansible-role-asdf-plugin/commit/ce50080da1849006b29ae9d8d99740774f4c384d))
+
 ### [1.1.1](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.0...1.1.1) (2021-10-21)
 
 

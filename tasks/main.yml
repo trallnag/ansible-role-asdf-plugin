@@ -6,18 +6,14 @@
   when: asdf_plugin_shell_executable is undefined
   ansible.builtin.command: >-
     asdf plugin add {{ asdf_plugin_name }} {{ asdf_plugin_git_url }}
-  register: task
-  failed_when: task.rc >= 1 and 'already added' not in task.stderr
-  changed_when: task.rc == 0
+  changed_when: false
 
 - name: "{{ asdf_plugin_name }} : Add plugin"
   when: asdf_plugin_shell_executable is defined
   ansible.builtin.shell: >-
     asdf plugin add {{ asdf_plugin_name }} {{ asdf_plugin_git_url }}
   args: {executable: "{{ asdf_plugin_shell_executable }}"}
-  register: task
-  failed_when: task.rc >= 1 and 'already added' not in task.stderr
-  changed_when: task.rc == 0
+  changed_when: false
 
 
 # ------------------------------------------------------------------------------
@@ -28,8 +24,6 @@
   when: asdf_plugin_shell_executable is undefined and asdf_plugin_git_ref is defined
   ansible.builtin.command: >-
     asdf plugin update {{ asdf_plugin_name }} {{ asdf_plugin_git_ref }}
-  register: task
-  failed_when: task.rc > 0 or 'fatal' in task.stdout or 'error' in task.stdout
   changed_when: false
 
 - name: "{{ asdf_plugin_name }} : Checkout plugin repo at ref"
@@ -37,8 +31,6 @@
   ansible.builtin.shell: >-
     asdf plugin update {{ asdf_plugin_name }} {{ asdf_plugin_git_ref }}
   args: {executable: "{{ asdf_plugin_shell_executable }}"}
-  register: task
-  failed_when: task.rc > 0 or 'fatal' in task.stdout or 'error' in task.stdout
   changed_when: false
 
 
@@ -51,8 +43,6 @@
   ansible.builtin.command: >-
     asdf install {{ asdf_plugin_name }} {{ item }}
   loop: "{{ asdf_plugin_package_versions }}"
-  register: task
-  failed_when: task.rc > 0
   changed_when: false
 
 - name: "{{ asdf_plugin_name }} : Install package {{ asdf_plugin_package_versions | default('SKIP') }}"
@@ -61,8 +51,6 @@
     asdf install {{ asdf_plugin_name }} {{ item }}
   loop: "{{ asdf_plugin_package_versions }}"
   args: {executable: "{{ asdf_plugin_shell_executable }}"}
-  register: task
-  failed_when: task.rc > 0
   changed_when: false
 
 
@@ -74,8 +62,6 @@
   when: asdf_plugin_shell_executable is undefined and asdf_plugin_package_version_global is defined
   ansible.builtin.command: >-
     asdf global {{ asdf_plugin_name }} {{ asdf_plugin_package_version_global }}
-  register: task
-  failed_when: task.rc > 0
   changed_when: false
 
 - name: "{{ asdf_plugin_name }} : Set global version to {{ asdf_plugin_package_version_global | default('SKIP') }}"
@@ -83,8 +69,6 @@
   ansible.builtin.shell: >-
     asdf global {{ asdf_plugin_name }} {{ asdf_plugin_package_version_global }}
   args: {executable: "{{ asdf_plugin_shell_executable }}"}
-  register: task
-  failed_when: task.rc > 0
   changed_when: false
 
 

@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.1](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.0...1.1.1) (2021-10-21)
+
+
+### 📝 Documentation
+
+* **readme:** Add status badge for GitHub Actions ([e42b499](https://github.com/trallnag/ansible-role-asdf-plugin/commit/e42b499e36a162d030e78e73a38512f07babe2e9))
+
+
+### 🐛 Bug Fixes
+
+* Reduce changed_when ([4a17c6e](https://github.com/trallnag/ansible-role-asdf-plugin/commit/4a17c6e53afc4f420fb2645aee276a47682698ec))
+
 ## [1.1.0](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.0.0...1.1.0) (2021-10-16)
 
 

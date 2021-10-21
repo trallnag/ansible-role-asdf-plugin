@@ -6,9 +6,9 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: quarterly
+      interval: monthly
 
   - package-ecosystem: npm
     directory: /.local/node/
     schedule:
-      interval: quarterly
+      interval: monthly

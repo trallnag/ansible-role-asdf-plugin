@@ -1,5 +1,4 @@
 - name: "{{ asdf_plugin_name }} : Add plugin"
-  when: asdf_plugin_shell_executable is undefined
   ansible.builtin.shell: >-
     source {{ asdf_plugin_source }}
     asdf plugin add {{ asdf_plugin_name }} {{ asdf_plugin_git_url }}
@@ -9,7 +8,7 @@
   changed_when: false
 
 - name: "{{ asdf_plugin_name }} : Checkout plugin repo at ref"
-  when: asdf_plugin_shell_executable is undefined and asdf_plugin_git_ref is defined
+  when: asdf_plugin_git_ref is defined
   ansible.builtin.shell: >-
     source {{ asdf_plugin_source }}
     asdf plugin update {{ asdf_plugin_name }} {{ asdf_plugin_git_ref }}
@@ -19,7 +18,7 @@
   changed_when: false
 
 - name: "{{ asdf_plugin_name }} : Install package {{ asdf_plugin_package_versions | default('SKIP') }}"
-  when: asdf_plugin_shell_executable is defined and asdf_plugin_package_versions is defined
+  when: asdf_plugin_package_versions is defined
   ansible.builtin.shell: >-
     source {{ asdf_plugin_source }}
     asdf install {{ asdf_plugin_name }} {{ item }}
@@ -28,7 +27,7 @@
   changed_when: false
 
 - name: "{{ asdf_plugin_name }} : Set global version to {{ asdf_plugin_package_version_global | default('SKIP') }}"
-  when: asdf_plugin_shell_executable is defined and asdf_plugin_package_version_global is defined
+  when: asdf_plugin_package_version_global is defined
   ansible.builtin.shell: >-
     source {{ asdf_plugin_source }}
     asdf global {{ asdf_plugin_name }} {{ asdf_plugin_package_version_global }}

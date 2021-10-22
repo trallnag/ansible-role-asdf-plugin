@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.4](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.3...1.1.4) (2021-10-22)
+
+
+### 🐛 Bug Fixes
+
+* Replace wrong YAML block style ([eb65d0f](https://github.com/trallnag/ansible-role-asdf-plugin/commit/eb65d0f7ee2b46d7132d59728889c6071826c92d))
+
 ### [1.1.3](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.2...1.1.3) (2021-10-22)
 
 

@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.3](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.2...1.1.3) (2021-10-22)
+
+
+### 🎨 Style
+
+* Rename yml to yaml ([76bf884](https://github.com/trallnag/ansible-role-asdf-plugin/commit/76bf88457f7b0ee34e06ee3b5777ddc993c748dc))
+* Replace === with --- ([e3983ef](https://github.com/trallnag/ansible-role-asdf-plugin/commit/e3983ef6458f2d1e1c2242208cd1679dd33e7a41))
+
+
+### 🐛 Bug Fixes
+
+* Remove incorrect when statements ([69e9c0c](https://github.com/trallnag/ansible-role-asdf-plugin/commit/69e9c0cccc9643ba3e03d1e2987779897843b2ad))
+
 ### [1.1.2](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.1...1.1.2) (2021-10-21)
 
 

@@ -41,7 +41,6 @@ argument_specs:
 
       asdf_plugin_shell_executable:
         type: str
-        required: true
         default: /bin/bash
         description: >-
           Absolute path to a shell executable that the Ansible Shell module
@@ -50,7 +49,6 @@ argument_specs:
 
       asdf_plugin_source:
         type: str
-        required: true
         default: ~/.asdf/asdf.sh
         description: >-
           Asdf source script.

@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.5](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.4...1.1.5) (2021-12-17)
+
+
+### 🐛 Bug Fixes
+
+* Remove mutually exclusive fields in argument_specs ([08631b9](https://github.com/trallnag/ansible-role-asdf-plugin/commit/08631b97104dcab8122aed75ea7e7ef95449f75a))
+
 ### [1.1.4](https://github.com/trallnag/ansible-role-asdf-plugin/compare/1.1.3...1.1.4) (2021-10-22)
 
 

@@ -1,9 +1,1 @@
-# ==============================================================================
-# Project specific part of '.gitignore'.
-
-
 .local/node/node_modules
-
-
-# ==============================================================================
-# Generic part of '.gitignore' based on: <https://github.com/github/gitignore>.

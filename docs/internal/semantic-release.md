@@ -1,32 +1,3 @@
-# Development
-
-## Prerequesites
-
-* Pre-commit must be installed.
-
-## Getting Started
-
-Run the following to install the Git hooks for this repository.
-
-    pre-commit install --install-hooks
-    pre-commit install --hook-type commit-msg
-
-## Pre-Commit
-
-Used for maintaining Git hooks. Local setup required.
-
-* <https://pre-commit.com/>
-* <https://github.com/pre-commit/pre-commit>
-
-Whenever this repository is cloned, `pre-commit install` must be run once to
-install the Git hook.
-
-Configured via [`.pre-commit-config.yaml`](.pre-commit-config.yaml).
-It should automatically run on every commit. It is also run as part of the CI/CD
-pipeline.
-
-To trigger pre-commit manually, execute `pre-commit run -a`.
-
 ## Semantic-Release
 
 Used for automatically releasing new versions. Only relevant within CI/CD, so no
@@ -48,9 +19,3 @@ Configuration of semantic-release takes place in multiple places:
 
 * [`.github/workflows/primary.yaml`](.github/workflows/primary.yaml): Here Semantic
   Release is actually executed.
-
-## Random Q&A
-
-### How to release a new version?
-
-Push to the master branch. Semantic-release will take care of everything else.

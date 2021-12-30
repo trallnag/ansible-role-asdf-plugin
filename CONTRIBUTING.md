@@ -7,7 +7,7 @@ Your contributions to this project are appreciated.
 It is recommended to take a look the internal documentation at
 [`docs/internal`](docs/internal).
 
-## Work on codebase
+## Work on the codebase
 
 Ensure that [pre-commit](https://github.com/pre-commit/pre-commit) is installed.
 Pre-commit is used for maintaing Git hooks used in this project. Read

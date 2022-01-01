@@ -57,7 +57,6 @@ jobs:
         run: npm install --no-progress --prefer-offline 2>&1 | tee
 
       - name: Semantic Release
-        if: "!contains(github.event.head_commit.message, '[skip semantic release]')"
         id: semantic_release
         run: npx --no-install semantic-release
         env:

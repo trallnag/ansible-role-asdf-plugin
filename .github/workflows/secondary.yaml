@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   pull_request:
   push:
-    branches-ignore: [master]
+    branches-ignore: [trunk]
 
 jobs:
   secondary:

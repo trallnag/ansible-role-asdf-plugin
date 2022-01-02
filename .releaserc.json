@@ -8,17 +8,6 @@
     { "name": "alpha", "prerelease": true }
   ],
   "preset": "conventionalcommits",
-  "presetConfig": {
-    "types": [
-      { "type": "feat", "section": "✨ Features" },
-      { "type": "fix", "section": "🐛 Bug Fixes" },
-      { "type": "perf", "section": "⚡️ Performance Improvements" },
-      { "type": "refactor", "section": "♻️ Refactoring" },
-      { "type": "docs", "section": "📝 Documentation" },
-      { "type": "style", "section": "🎨 Style" },
-      { "type": "test", "section": "✅ Tests" }
-    ]
-  },
   "tagFormat": "${version}",
   "plugins": [
     [
@@ -31,7 +20,18 @@
       }
     ],
     "@semantic-release/release-notes-generator",
-    "@semantic-release/git",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["CHANGELOG.md"]
+      }
+    ],
     "@semantic-release/github"
   ]
 }

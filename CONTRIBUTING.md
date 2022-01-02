@@ -2,24 +2,13 @@
 
 Your contributions to this project are appreciated.
 
-## Getting started
-
 It is recommended to take a look the internal documentation at
-[`docs/internal`](docs/internal).
+[`docs/internal`](docs/internal) and therein especially
+[`docs/internal/faq.md`](docs/internal/faq.md), a document containing
+frequently asked questions (and hopefully good answers).
 
-## Work on the codebase
+Here are a few highlighted questions and answers to get started:
 
-Ensure that [pre-commit](https://github.com/pre-commit/pre-commit) is installed.
-Pre-commit is used for maintaing Git hooks used in this project. Read
-[`docs/internal/pre-commit.md`](docs/internal/pre-commit.md) for more information.
-
-Install the Git hooks with pre-commit:
-
-```shell
-pre-commit install --install-hooks
-pre-commit install --hook-type commit-msg
-```
-
-Follow the usual Git workflow. Work on a dedicated branch instead of the trunk.
-
-Now you can start contributing to the code.
+- [How to setup local dev environment?](docs/internal/faq.md#how-to-release-a-new-version)
+- [How to release a new version?](docs/internal/faq.md#how-to-release-a-new-version)
+- ...

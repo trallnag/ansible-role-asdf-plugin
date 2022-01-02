@@ -8,7 +8,7 @@ local setup required.
 
 Configuration of semantic-release takes place in multiple places:
 
-* [`.releaserc.json`](.releaserc.json): Semantic-release is configured in this
+* [`../../.releaserc.json`](../../.releaserc.json): Semantic-release is configured in this
   file. For example the plugins used or plugin specific configuration. Currently
   this project uses the Conventional Commits preset, a bunch of additonal types
   and a few additional release rules.

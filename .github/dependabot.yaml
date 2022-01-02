@@ -9,6 +9,6 @@ updates:
       interval: monthly
 
   - package-ecosystem: npm
-    directory: /.local/node/
+    directory: /node/
     schedule:
       interval: monthly

@@ -13,9 +13,9 @@ Configuration of semantic-release takes place in multiple places:
   this project uses the Conventional Commits preset, a bunch of additonal types
   and a few additional release rules.
 
-* [`.local/node/`](.local/ci): Dependency management for the Semantic Release
+* [`../../node/`](../../node/): Dependency management for the semantic-release
   environment. At runtime in CI/CD pipeline the `package.json` and lock file are
   copied to the root of the project.
 
-* [`.github/workflows/primary.yaml`](.github/workflows/primary.yaml): Here Semantic
-  Release is actually executed.
+* [`../../.github/workflows/primary.yaml`](../../.github/workflows/primary.yaml):
+  Here semantic-release is actually executed.

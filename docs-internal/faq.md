@@ -1,5 +1,12 @@
 # Frequently Asked Questions
 
+<!--TOC-->
+
+- [How to release a new version?](#how-to-release-a-new-version)
+- [How to setup local dev environment?](#how-to-setup-local-dev-environment)
+
+<!--TOC-->
+
 ## How to release a new version?
 
 Push the default branch to remote and wait for the finish of the GitHub Actions

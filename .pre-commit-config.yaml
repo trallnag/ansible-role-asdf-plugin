@@ -27,6 +27,12 @@ repos:
     hooks:
       - id: markdownlint-cli2
 
+  - repo: https://github.com/frnmst/md-toc
+    rev: "8.1.1"
+    hooks:
+      - id: md-toc
+        args: [-p, -s, "1", github]
+
 exclude: |
   (?x)(
     ^CHANGELOG.md$

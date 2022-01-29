@@ -22,6 +22,11 @@ repos:
         stages: [commit-msg]
         additional_dependencies: ['@commitlint/config-conventional']
 
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: "v0.4.0"
+    hooks:
+      - id: markdownlint-cli2
+
 exclude: |
   (?x)(
     ^CHANGELOG.md$

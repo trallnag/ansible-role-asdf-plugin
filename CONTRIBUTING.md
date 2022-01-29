@@ -9,6 +9,6 @@ frequently asked questions (and hopefully good answers).
 
 Here are a few highlighted questions and answers to get started:
 
-- [How to setup local dev environment?](docs-internal/faq.md#how-to-release-a-new-version)
+- [How to setup local dev environment?](docs-internal/faq.md#how-to-setup-local-dev-environment)
 - [How to release a new version?](docs-internal/faq.md#how-to-release-a-new-version)
 - ...

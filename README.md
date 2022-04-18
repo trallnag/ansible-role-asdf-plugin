@@ -13,10 +13,10 @@ Available on [Ansible Galaxy](https://galaxy.ansible.com/trallnag/asdf_plugin).
 
 ## Scope
 
-* Installing a single asdf plugin.
-* Installing multiple versions of a package managed by a plugin.
-* Everything supported by asdf should be configurable but also optional.
-* No requirments except asdf itself.
+- Installing a single asdf plugin.
+- Installing multiple versions of a package managed by a plugin.
+- Everything supported by asdf should be configurable but also optional.
+- No requirments except asdf itself.
 
 ## Special Requirements
 

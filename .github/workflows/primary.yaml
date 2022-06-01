@@ -65,7 +65,7 @@ jobs:
       # ------------------------------------------------------------------------
 
       - name: Import to Ansible Galaxy
-        uses: robertdebock/galaxy-action@1.2.0
+        uses: robertdebock/galaxy-action@1.2.1
         with:
           galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
           git_branch: trunk

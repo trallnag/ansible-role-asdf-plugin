@@ -3,7 +3,7 @@ galaxy_info:
   namespace: trallnag
   role_name: asdf_plugin
   description: Installs any asdf plugin and package
-  license: MIT
+  license: ISC
   company: none
   min_ansible_version: 2.5
 
@@ -17,9 +17,3 @@ galaxy_info:
     - name: GenericUNIX
       versions:
         - any
-
-  galaxy_tags:
-    - asdf
-    - system
-    - packaging
-    - development

@@ -1,6 +1,16 @@
 extends: default
 
 rules:
-  document-start: disable
-  line-length: disable
+  braces:
+    min-spaces-inside: 1
+    max-spaces-inside: 1
+    min-spaces-inside-empty: 0
+    max-spaces-inside-empty: 0
   comments-indentation: disable
+  document-start: disable
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+  line-length: disable
+  truthy:
+    allowed-values: ['true', 'false']

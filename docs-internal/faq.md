@@ -12,13 +12,13 @@
 Push the default branch to remote and wait for the finish of the GitHub Actions
 workflow "primary".
 
-According to the rules of semantic versioning and conventional commits
-a new version might be released. This is handled by semantic-release. Read
+According to the rules of semantic versioning and conventional commits a new
+version might be released. This is handled by semantic-release. Read
 [`semantic-release.md`](semantic-release.md) for more information.
 
 If a new version is released, edit the GitHub release notes to add anything
-noteworthy beyond the automatically generated content. Also make sure to add
-the same to the changelog. But again, this last step is optional.
+noteworthy beyond the automatically generated content. Also make sure to add the
+same to the changelog. But again, this last step is optional.
 
 ## How to setup local dev environment?
 

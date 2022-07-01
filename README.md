@@ -7,7 +7,8 @@
 
 Ansible role that installs any asdf plugin and package.
 
-This role does not install asdf itself. It must already be available on the target.
+This role does not install asdf itself. It must already be available on the
+target.
 
 Available on [Ansible Galaxy](https://galaxy.ansible.com/trallnag/asdf_plugin).
 
@@ -46,8 +47,8 @@ Here is a minimal Playbook:
         asdf_plugin_name: gopass
         asdf_plugin_git_url: https://github.com/trallnag/asdf-gopass.git
         asdf_plugin_git_ref: refs/tags/v1.0.1
-        asdf_plugin_package_versions: ["1.12.7", "1.12.8"]
-        asdf_plugin_package_version_global: "1.12.8"
+        asdf_plugin_package_versions: ['1.12.7', '1.12.8']
+        asdf_plugin_package_version_global: '1.12.8'
 ```
 
 And here packaged within a small wrapper role:
@@ -59,13 +60,13 @@ And here packaged within a small wrapper role:
   vars:
     asdf_plugin_name: terraform
     asdf_plugin_git_url: https://github.com/asdf-community/asdf-hashicorp.git
-    asdf_plugin_package_versions: ["1.0.9"]
-    asdf_plugin_package_version_global: "1.0.9"
+    asdf_plugin_package_versions: ['1.0.9']
+    asdf_plugin_package_version_global: '1.0.9'
 
 - name: Setup completion for Bash
   ansible.builtin.blockinfile:
     path: ~/.bashrc
-    marker: "# {mark} :: ANSIBLE MANAGED BLOCK :: {{ role_name }}"
+    marker: '# {mark} :: ANSIBLE MANAGED BLOCK :: {{ role_name }}'
     block: |
       complete -C terraform terraform
 ```
